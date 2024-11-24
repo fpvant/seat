@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head>
+<style>
+body{border:1px solid #ccc;width:80%;margin:30px auto}
+div{height:40px;width:100%}
+b{display:inline-block;height:100%;width:24.7%;border:1px solid;text-align:center;line-height:2.4}
+b:first-child,b+b{border-right:none}
+b:last-child{border-right:1px solid}
+div:last-child b,
+div+div b{border-bottom:1px solid}
+p{text-align:center;background:#ffc;padding:0;margin:0;height:50px;line-height:50px}
+footer{text-align:right;padding:0 5px}
+</style>
+<body>
+<div><b>Andy Leader #app #web</b><b>Ellen PM (F1)</b><b>Satomi #app</b></div>
+<div><b>Flora PM (Payment)</b><b>Hope PM (B1/CMS)</b><b>Han PM (J1)</b></div>
+<p>---走道----</p>
+<div><b>Fred #app</b><b>Vant #web #cms</b><b>Shuhan #cms</b><b>Benji Boss</b></div>
+<div><b>Harry #app</b><b>Jimmy #app</b><b>Kevin Wu #app</b><b>Johnny #app</b></div>
+<p>---走道----</p>
+<div><b>Ray boy #web</b><b>Albert #web</b><b>Kevin Chen #web</b><b>Pierce #web</b></div>
+<div><b>Karent #web</b><b>Jim #web</b><b>Owen #web</b><b>Winnie #web</b></div>
+<p>---走道----</p>
+<div><b>Cindy #web</b><b>Connie #web</b><b>Ray girl #web</b></div>
+<footer>
+<small>&copy; Copyright 2024</small>
+</footer>
+<script>
+    Array.from(document.getElementsByTagName('div')).forEach(v=>{
+        Array.from(v.getElementsByTagName('b')).forEach(v=>{
+            let map = {web:'#06f', app:'#f00', cms:'#f60'}
+            Object.keys(map).map(k=>{
+                let c = map[k]
+                v.innerHTML = v.innerHTML.replace('#'+k, '<span style=color:'+c+'>#'+k+'</span>')
+            })
+        })
+    })
+</script>
